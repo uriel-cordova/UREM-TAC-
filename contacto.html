@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li.active a {
+            color: #ffcc00;
+        }
+
+        .contacto {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contacto-info {
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .contacto-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contacto-info p {
+            margin-bottom: 15px;
+        }
+
+        .contacto-info img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li><a href="conocenos.html">CONÓCENOS</a></li>
+                <li class="active"><a href="contacto.html">CONTACTO</a></li>
+                <li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contacto post-navbar">
+        <div class="contacto-info">
+            <h3>Dirección</h3>
+            <p>Av. Kepler 2143, Reserva Territorial Atlixcayotl, 72190, Puebla, Puebla.</p>
+
+            <h3>Teléfono</h3>
+            <p>+2 (881) 100 0123</p>
+
+            <h3>E-mail</h3>
+            <p>CLIENTE_UREM-TAC@gmail.com</p>
+
+            <img src="imagenes/organigrama.jpg" alt="Organigrama UREM-TAC">
+        </div>
+    </div>
+
+    <footer>
+        <p>¡Sé parte del mejor equipo táctico!</p>
+        <p>UREM-TAC 2024, todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

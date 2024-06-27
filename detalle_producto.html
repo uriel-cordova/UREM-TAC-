@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTO</title>
+    <link rel="stylesheet" href="styles.css">
+<script defer src="menu.js"></script>
+
+    <style>
+        /* Estilos para el detalle del producto */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .detalle {
+            padding: 20px;
+        }
+
+        .detalle img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h2, h3, h4, ul, p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+
+        /* Estilos para el menú de navegación */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo">
+        </div>
+        <nav>
+           <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li><a href="conocenos.html">CONOCENOS</a></li>
+  		<li><a href="contacto.html">CONTACTO</a></li>
+		<li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+<div class="caja-index post-navbar">
+    <div class="detalle">
+        <h2>Detalle del Producto</h2>
+
+        <!-- Mostrar la imagen del producto -->
+        <img src="" id="imagenProducto" alt="Producto">
+
+        <!-- Mostrar el nombre del producto -->
+        <h3 id="nombreProducto"></h3>
+
+        <!-- Mostrar las características del producto -->
+        <div id="caracteristicasProducto"></div>
+
+        <!-- Mostrar el precio del producto -->
+        <p id="precioProducto" class="precio"></p>
+
+        <!-- Botón para regresar -->
+        <button class="acciones-carrito" id="agregar-carrito">Añadir al carrito</button>
+    </div>
+
+
+    <script>
+        // Recuperar detalles del producto desde sessionStorage
+        var nombreProducto = sessionStorage.getItem('nombreProducto');
+        var caracteristicasProducto = sessionStorage.getItem('caracteristicasProducto');
+        var precioProducto = sessionStorage.getItem('precioProducto');
+        var imagenProducto = sessionStorage.getItem('imagenProducto');
+    
+        // Mostrar detalles del producto en la página de detalle
+        document.getElementById('nombreProducto').textContent = nombreProducto;
+        document.getElementById('caracteristicasProducto').innerHTML = caracteristicasProducto;
+        document.getElementById('precioProducto').textContent = precioProducto;
+        document.getElementById('imagenProducto').src = imagenProducto;
+        document.getElementById('imagenProducto').alt = nombreProducto;
+    
+        // Función para añadir al carrito
+        document.getElementById('agregar-carrito').addEventListener('click', function() {
+            var carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+            var producto = {
+                nombre: nombreProducto,
+                caracteristicas: caracteristicasProducto,
+                precio: parseFloat(precioProducto.replace('Precio: $', '')),
+                imagen: imagenProducto,
+                cantidad: 1
+            };
+    
+            // Verificar si el producto ya está en el carrito
+            var productoExistente = carrito.find(item => item.nombre === producto.nombre);
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push(producto);
+            }
+    
+            // Guardar el carrito actualizado en sessionStorage
+            sessionStorage.setItem('carrito', JSON.stringify(carrito));
+            alert('Producto añadido al carrito');
+        });
+    </script>
+
+      <!-- <script> 
+        // Recuperar detalles del producto desde sessionStorage
+        var nombreProducto = sessionStorage.getItem('nombreProducto');
+        var caracteristicasProducto = sessionStorage.getItem('caracteristicasProducto');
+        var precioProducto = sessionStorage.getItem('precioProducto');
+        var imagenProducto = sessionStorage.getItem('imagenProducto');
+
+        // Mostrar detalles del producto en la página de detalle
+        document.getElementById('nombreProducto').textContent = nombreProducto;
+        document.getElementById('caracteristicasProducto').innerHTML = caracteristicasProducto;
+        document.getElementById('precioProducto').textContent = precioProducto;
+        document.getElementById('imagenProducto').src = imagenProducto;
+        document.getElementById('imagenProducto').alt = nombreProducto; // Establecer alt con el nombre del producto
+    </script> -->
+
+</body>
+</html>

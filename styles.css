@@ -1,0 +1,212 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffe5cc; /* Cambia el color de fondo a naranja claro */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Asegurar que el header no se solape con el contenido fijo */
+    z-index: 1000; /* Asegurar que el header esté sobre el contenido fijo */
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* Espacio alrededor del texto del enlace */
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+nav ul li a:hover {
+    background-color: #9e9caf; /* Cambia el color de fondo al pasar el cursor */
+    color: black; /* Cambia el color del texto al pasar el cursor */
+}
+
+nav ul li.active a {
+    background-color: #f0f0f0; /* Cambia el color de fondo al estar activo */
+    color: #333; /* Cambia el color del texto al estar activo */
+}
+
+.hero {
+    max-height: 250px;
+    transition: max-height .3s ease;
+}
+
+.hero.cerrado {
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.navbar-fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100; /* Asegurar que esté por encima del contenido desplazable */
+    background-color: #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra debajo de la barra fija */
+}
+
+.hero {
+    background-color: #222;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.about {
+    background-color: #ffe5cc; /* Cambia el color de fondo a naranja claro */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.about h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.member {
+    margin: 20px;
+    text-align: center;
+}
+
+.member img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 100px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+/* Estilos para el logo */
+.logo-container {
+    padding: 0 40px;
+}
+
+.logo-container img {
+    width: 150px; /* Ajusta el tamaño del logo según lo necesites */
+    height: auto;
+}
+
+#hamburguesa {
+    border-style: none;
+    background-color: #333;
+    color: white;
+}
+
+#hamburguesa:hover {
+    background-color: #9e9caf;
+    color: black;
+    border-radius: 15px;
+}
+
+
+/* Estilo para el hover sobre los elementos del menú */
+nav ul li a:hover {
+    background-color: #9e9caf; /* Cambia el color de fondo al pasar el cursor */
+    color: black; /* Cambia el color del texto al pasar el cursor */
+}
+
+/* Estilo para el estado activo del elemento del menú */
+nav ul li.active a {
+    background-color: #f0f0f0; /* Cambia el color de fondo al estar activo */
+    color: #333; /* Cambia el color del texto al estar activo */
+}
+
+
+@media only screen and (max-width: 768px) {
+    header nav ul {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+        position: absolute;
+        top: 100%; /* Colocar el menú desplegable debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para el menú desplegable */
+        z-index: 999; /* Asegurarse de que esté por encima de todo, excepto del botón hamburguesa */
+    }
+
+    header nav ul.active {
+        display: block; /* Mostrar el menú cuando está activo */
+    }
+
+    #hamburguesa {
+        display: inline-block; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+}
+
+
+
+#menu-principal li.seleccionado a {
+    /* Estilos cuando el enlace está seleccionado */
+    color: #ff6347; /* Por ejemplo, color de texto rojo */
+    font-weight: bold; /* Ejemplo de texto en negrita */
+    /* Otros estilos según sea necesario */
+}
+
+
+
+
+
+
+
+
+
+

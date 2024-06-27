@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTOS</title>
+    <script defer src="menu.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        .listaProductos {
+                  margin-bottom: 200px; /* Ajusta el valor según lo necesites */
+        }
+
+        h2 {
+        margin-top: 20px; /* Ajusta el valor según lo necesites */
+        }
+
+        h2 {
+            text-align: center;
+        }
+        /* Estilos para la disposición de los productos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .listaProductos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .producto {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: calc(33.33% - 20px);
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            cursor: pointer;
+            /* Cursor cambia a puntero al pasar sobre el producto */
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h3,
+        h4,
+        ul,
+        p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header id="navbar">
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+
+                <li class="active"><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li><a href="conocenos.html">CONOCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="caja-index post-navbar">
+        <section>
+            <div class="seccionProducto">
+                <h2>CABALLERO</h2>
+                <div class="listaProductos">
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen1.jpg" alt="PANTALON TACTICO 5.11 - RIDGE PANT">
+                        <h3>PANTALON TACTICO 5.11 - RIDGE PANT</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Cinturilla cómoda con cierre de cremallera y botón con logo</li>
+                            <li>Bolsillos: 80% poliéster / 20% popelina de algodón, 4.0 oz.</li>
+                            <li>Túnel de puños flexibles en el interior de la cintura</li>
+                            <li>Rodillas articuladas</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2280.00</p>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen2.jpg" alt="CHAMARRA TACTICA 5.11 - SCOPE HOODIE">
+                        <h3>CHAMARRA TACTICA 5.11 - SCOPE HOODIE</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Las tintas premium resisten la decoloración</li>
+                            <li>Costuras de doble aguja en dobladillos y mangas</li>
+                            <li>Cinta de cuello hombro a hombro.</li>
+                            <li>Capucha forrada en jersey</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$999.00</p>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen3.jpg" alt="CAMISA TACTICA 5.11 - MARKSMAN UTILITY MANGA CORTA">
+                        <h3>CAMISA TACTICA 5.11 - MARKSMAN UTILITY MANGA CORTA</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Solapa delantera central con botones con logo</li>
+                            <li>Cuello de dos piezas con pie de cuello</li>
+                            <li>Canesú trasero de doble capa</li>
+                            <li>Clasificación UPF 50+</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$1740.00</p>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen4.jpg" alt="CHAMARRA TÁCTICA 5.11 - STRATOS 1/4 ZIP">
+                        <h3>CHAMARRA TÁCTICA 5.11 - STRATOS 1/4 ZIP</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>5.11 [+] Etiqueta tejida en el dobladillo delantero izquierdo</li>
+                            <li>Etiqueta principal/transferencia de calor sin etiquetas</li>
+                            <li>Ponte la parte superior de la capa intermedia.</li>
+                            <li>Cuello interior forrado de tricot cepillado</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$1800.00</p>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen5.jpg" alt="PLAYERA TACTICA 5.11 - MISSION TEE 2.0">
+                        <h3>PLAYERA TACTICA 5.11 - MISSION TEE 2.0</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Las tintas premium resisten la decoloración</li>
+                            <li>Cinta de hombro a hombro en el cuello</li>
+                            <li>Rendimiento que absorbe la humedad</li>
+                            <li>Corte regular</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$660.00</p>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen6.jpg" alt="ZAPATOS TACTICOS - NORRIS LOW">
+                        <h3>ZAPATOS TACTICOS - NORRIS LOW</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Suela exterior Vibram® Marbrani con compuesto XS trek para una mejor tracción en todos los terrenos</li>
+                            <li>ASTM F2413-11 PR: certificado resistente a perforaciones para mayor protección</li>
+                            <li>Puntera de goma cosida para mayor durabilidad y protección</li>
+                            <li>Parte superior de ante y nailon.</li>
+                            <li>plantilla Ortholite®</li>
+                            <li>ACT ajuste</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2990.00</p>
+                    </div>
+
+                 
+                </div>
+            </div>
+
+
+
+            <div class="seccionProducto">
+                <h2>MUJERES</h2>
+                <div class="listaProductos">
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer1.jpg" alt="CHAMARRA TACTICA 5.11 - AURORA SHELL PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - AURORA SHELL PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>15K / 15K a prueba de agua y transpirable</li>
+                            <li>Costura completamente sellada</li>
+                            <li>Mangas y hombros articulados</li>
+                            <li>Corte regular</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$3700.01</p>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer2.jpg" alt="PANTALON TACTICO 5.11 - STRYKE PARA MUJER">
+                        <h3>PANTALON TACTICO 5.11 - STRYKE PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Estiramiento mecánico bidireccional Flex-Tac®.</li>
+                            <li>Cremalleras YKK® y broches Prym®</li>
+                            <li>76 oz. Tejido ripstop Flex-Tac®</li>
+                            <li>Cintura de túnel autoajustable.</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2250.00</p>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer3.jpg" alt="CHAMARRA TACTICA 5.11 - SCOPE HOODIE PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - SCOPE HOODIE PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Costuras de doble aguja en dobladillos y mangas.</li>
+                            <li>Las tintas premium resisten la decoloración</li>
+                            <li>Cinta de cuello hombro a hombro.</li>
+                            <li>Capucha forrada en jersey</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$999</p>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer4.jpg" alt="CHAMARRA TACTICA 5.11 - ROMPEVIENTOS CASCADIA PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - ROMPEVIENTOS CASCADIA PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Tejido dobby 100 % poliéster, revestimiento, 3,1 oz, DWR</li>
+                            <li>Plataforma con parche de bucle en la manga derecha</li>
+                            <li>Ribete elástico en los puños de las mangas</li>
+                            <li>Corte normal</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2204.00</p>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer5.jpg" alt="TENNIS TACTICOS 5.11 - ABR TRAINER PARA MUJER">
+                        <h3>TENNIS TACTICOS 5.11 - ABR TRAINER PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Zapato de entrenamiento de alto rendimiento</li>
+                            <li>Mayor comodidad, estabilidad y tracción</li>
+                            <li>Caída de talón a talón de 8 mm</li>
+                            <li>Plantilla Ortholite®</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2799.00</p>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer6.jpg" alt="CHAMARRA TACTICA 5.11 - SIERRA SOFTSHELL PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - SIERRA SOFTSHELL PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>La chamarra tactica 5.11 está confeccionada con un tejido 100% poliéster hecho a máquina y un acabado DWR, el cual garantiza que aún con lluvias ligeras, permanezca seca. Tiene discretos bolsillos en el pecho con espacio para su teléfono móvil u otros artículos prácticos. El sistema de RapidDraw 5.11 permite un acceso rápido a una bolsa interna. Dispone de ajustadores elásticos en los bolsillos de la chamarra y forro de la bolsa para calentar las manos.</li>
+                            
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$3100.00</p>
+                    </div>
+
+            
+
+                </div>
+            </div>
+            <div class="seccionProducto">
+                <h2>ACCESORIOS</h2>
+                <div class="listaProductos">
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio1.jpg">
+                        </div>
+                        <h3>BOTAS TACTICAS 5.11 - SPEED 4.0 8" ARID</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Capa de plantilla 5.11™ Heat Deflect para desviar el calor radiante del suelo</li>
+                            <li>Suela resistente al aceite y al deslizamiento ASTM</li>
+                            <li>Costuras en la suela para mayor durabilidad</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$3074</p>
+                    </div>
+
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio2.png">
+                        </div>
+                        <h3>MOCHILA TACTICA 5.11 - RUSH 12 2.O</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Compartimiento principal - 46 cm x 28 cm x 17 cm</li>
+                            <li>Bolsillo para bolsa de hidratación 1.5L - 42 cm x 25 cm</li>
+                            <li>Espacio para ordenador portátil o tableta de hasta 15"</li>
+                            <li>Capacidad total - 1,476 pulgadas cúbicas / 24 litros</li>
+                            <li>Bolsillo inferior delantero - 30 cm x 23 cm x 4 cm</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2780</p>
+                    </div>
+
+             
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio3.jpg">
+                        </div>
+                        <h3>GORRO TACTICO 5.11 - BOONIE HAT</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Costura circular central con logotipo 5.11</li>
+                            <li>Cuerda de tracción tubular ajustable</li>
+                            <li>Mezcla de poliéster/algodón</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$850</p>
+                    </div>
+
+                    <!-- Agrega más productos aquí -->
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio4.jpg">
+                        </div>
+                        <h3>MOCHILA TACTICA 5.11 - COVRT 18 2.0</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>48.26 cm de alto x 26.67 cm de largo x 16.51 cm de profundidad</li>
+                            <li>32 litros / 1953 pulgadas cúbicas Peso - 2.64 libras</li>
+                            <li>Compatible con laptops de hasta 15"</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$3790</p>
+                    </div>
+
+                    <!-- Agrega más productos aquí -->
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio5.jpg">
+                        </div>
+                        <h3>GUANTES TACTICOS 5.11 - COMPETITION SHOOTING GLV</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Cierre de muñeca con velcro ajustable</li>
+                            <li>Panel para limpiar el sudor en el pulgar</li>
+                            <li>compatible con TAA</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$920</p>
+                    </div>
+
+                    <!-- Agrega más productos aquí -->
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio6.jpg">
+                        </div>
+                        <h3>BOLSA TACTICA 5.11 - H20 CARRIER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li> La bolsa táctica 5.11 es un versátil portabotellas diseñado para satisfacer las necesidades de hidratación tanto en entornos tácticos como recreativos.</li>
+                           
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$880</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        <script>
+            let productos = document.querySelectorAll(".producto");
+            productos.forEach(producto => {
+                producto.addEventListener("click", () => mostrarDetalle(producto));
+            });
+
+            function mostrarDetalle(producto) {
+                // Obtener los detalles del producto
+                var nombre = producto.querySelector('h3').textContent;
+                var caracteristicas = producto.querySelector('ul').innerHTML;
+                var precio = producto.querySelector('.precio').textContent;
+                var imagenSrc = producto.querySelector('img').src;
+
+                // Almacenar detalles en sessionStorage para mostrar en la página de detalle
+                sessionStorage.setItem('nombreProducto', nombre);
+                sessionStorage.setItem('caracteristicasProducto', caracteristicas);
+                sessionStorage.setItem('precioProducto', precio);
+                sessionStorage.setItem('imagenProducto', imagenSrc);
+
+                // Redirigir a la página de detalle
+                window.location.href = "detalle_producto.html";
+            }
+        </script>
+
+<footer>
+    <div class="elemento-footer">
+    
+    </div>
+    
+    <p>!! se parte del mejor equipo tactico !! </p>
+    <p>UREM-TAC 2024, todos los derechos reservado</p>
+</footer>
+</body>
+
+</html>

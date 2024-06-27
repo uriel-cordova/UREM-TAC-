@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARRITO</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="menu.js"></script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Estilos para los productos en el carrito */
+        .carrito-item {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px;
+            padding: 1rem;
+        }
+
+        .carrito-item img {
+            width: 50px;
+        }
+
+        .cantidad {
+            width: 50px;
+            text-align: center;
+        }
+
+        .total {
+            font-weight: bold;
+        }
+
+        .acciones {
+            position: fixed;
+            bottom: 55px;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        }
+
+        .acciones button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .acciones button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Estilos para el header y navegación */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header .logo-container {
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 150px; /* Tamaño ajustado del logo */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        header nav ul li a.active {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Estilos para la disposición de los productos */
+        .listaProductos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .producto {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: calc(33.33% - 20px);
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h3,
+        h4,
+        ul,
+        p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+
+        /* Estilos para el detalle del producto */
+        #box {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        #caracteristicasProducto {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .detalle {
+            border-radius: 10px;
+            margin: 50px;
+            width: 250px;
+            padding: 20px;
+            background-color: #f5e1da; /* Color de fondo suave */
+        }
+
+        .detalle img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #total {
+            position: fixed;
+            bottom: 120px; /* Ajusta según la altura del botón de finalizar compra */
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul id="menu-principal">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html" class="active">CARRITO</a></li>
+                <li><a href="conocenos.html">CONOCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="carrito"></div>
+    <div id="total" class="total"></div>
+    <div class="acciones">
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </div>
+
+    <footer>
+        <p>UREM-TAC 2024, todos los derechos reservados</p>   
+    </footer>
+
+    <script>
+        function actualizarCarrito() {
+            var carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+            var carritoContainer = document.getElementById('carrito');
+            var totalContainer = document.getElementById('total');
+            carritoContainer.innerHTML = '';
+            var total = 0;
+    
+            carrito.forEach((producto, index) => {
+                var productoTotal = producto.precio * producto.cantidad;
+                total += productoTotal;
+    
+                var item = document.createElement('div');
+                item.className = 'carrito-item';
+                if (producto.precio !== null) {
+                    item.innerHTML = `
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div>${producto.nombre}</div>
+                        <div>$${producto.precio.toFixed(2)}</div>
+                        <input type="number" class="cantidad" value="${producto.cantidad}" min="1" data-index="${index}">
+                        <div>$${productoTotal.toFixed(2)}</div>
+                        <button class="boton-eliminar" data-index="${index}">Eliminar</button>
+                    `;
+                } else {
+                    console.error("El precio del producto es null.");
+                }
+                carritoContainer.appendChild(item);
+            });
+    
+            totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+    
+            // Añadir event listener a los inputs de cantidad
+            var cantidades = document.querySelectorAll('.cantidad');
+            cantidades.forEach(input => {
+                input.addEventListener('change', function() {
+                    var index = this.dataset.index;
+                    var nuevaCantidad = parseInt(this.value);
+                    carrito[index].cantidad = nuevaCantidad;
+                    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+            });
+    
+            // Añadir event listener a los botones de eliminar
+            var botonesEliminar = document.querySelectorAll('.boton-eliminar');
+            botonesEliminar.forEach(button => {
+                button.addEventListener('click', function() {
+                    var index = this.dataset.index;
+                    carrito.splice(index, 1);
+                    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+            });
+        }
+    
+        // Inicializar carrito al cargar la página
+        actualizarCarrito();
+    
+        // Añadir event listener al botón de finalizar compra
+        document.getElementById('finalizar-compra').addEventListener('click', function() {
+            // Mostrar alerta de compra finalizada
+            alert('Compra finalizada');
+            
+            // Vaciar el carrito
+            sessionStorage.removeItem('carrito');
+            
+            // Actualizar el contenido del carrito en la página
+            actualizarCarrito();
+        });
+    </script>
+</body>
+</html>
+

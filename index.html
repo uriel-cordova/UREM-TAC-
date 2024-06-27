@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="menu.js"></script>
+
+    <style>
+     .iframe-container {
+            width: 100%;
+            height: 400px; /* Abarca toda la altura de la ventana */
+            margin: 0;
+            padding: 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none; /* Quita el borde del iframe */
+        }
+
+
+
+     .listaProductos {
+                  margin-bottom: 200px; /* Ajusta el valor según lo necesites */
+        }
+
+        h2 {
+        margin-top: 20px; /* Ajusta el valor según lo necesites */
+        }
+
+        h2 {
+            text-align: center;
+        }
+        /* Estilos para la disposición de los productos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .listaProductos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 100px;
+        }
+
+        .producto {
+            flex: 0 0 calc(20% - 40px);
+            max-width: calc(20% - 40px);
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            cursor: pointer;
+            /* Cursor cambia a puntero al pasar sobre el producto */
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h3,
+        h4,
+        ul,
+        p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li><a href="conocenos.html">CONOCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="caja-index post-navbar">
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>"Regístrate y se parte de nuestro equipo táctico"</h1>
+                <form id="registro-form" action = "comprar.html" >
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <h2>!!! PROMOCIONES !!!</h2>
+
+    <iframe src="slider.html" width="600" height="800"></iframe>
+ 
+
+    
+    <div class="caja-index post-navbar">
+        <section>
+            <div class="seccionProducto">
+                <h2>!!! MAS PRODUCTOS !!!</h2>
+                <div class="listaProductos">
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen1.jpg" alt="PANTALON TACTICO 5.11 - RIDGE PANT">
+                        <h3>PANTALON TACTICO 5.11 - RIDGE PANT</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Cinturilla cómoda con cierre de cremallera y botón con logo</li>
+                            <li>Bolsillos: 80% poliéster / 20% popelina de algodón, 4.0 oz.</li>
+                            <li>Túnel de puños flexibles en el interior de la cintura</li>
+                            <li>Rodillas articuladas</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2280.00</p>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen2.jpg" alt="CHAMARRA TACTICA 5.11 - SCOPE HOODIE">
+                        <h3>CHAMARRA TACTICA 5.11 - SCOPE HOODIE</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Las tintas premium resisten la decoloración</li>
+                            <li>Costuras de doble aguja en dobladillos y mangas</li>
+                            <li>Cinta de cuello hombro a hombro.</li>
+                            <li>Capucha forrada en jersey</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$999.00</p>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen3.jpg" alt="CAMISA TACTICA 5.11 - MARKSMAN UTILITY MANGA CORTA">
+                        <h3>CAMISA TACTICA 5.11 - MARKSMAN UTILITY MANGA CORTA</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Solapa delantera central con botones con logo</li>
+                            <li>Cuello de dos piezas con pie de cuello</li>
+                            <li>Canesú trasero de doble capa</li>
+                            <li>Clasificación UPF 50+</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$1740.00</p>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="producto">
+                        <img src="imagenes/imagen4.jpg" alt="CHAMARRA TÁCTICA 5.11 - STRATOS 1/4 ZIP">
+                        <h3>CHAMARRA TÁCTICA 5.11 - STRATOS 1/4 ZIP</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>5.11 [+] Etiqueta tejida en el dobladillo delantero izquierdo</li>
+                            <li>Etiqueta principal/transferencia de calor sin etiquetas</li>
+                            <li>Ponte la parte superior de la capa intermedia.</li>
+                            <li>Cuello interior forrado de tricot cepillado</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$1800.00</p>
+                    </div>
+
+
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer1.jpg" alt="CHAMARRA TACTICA 5.11 - AURORA SHELL PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - AURORA SHELL PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>15K / 15K a prueba de agua y transpirable</li>
+                            <li>Costura completamente sellada</li>
+                            <li>Mangas y hombros articulados</li>
+                            <li>Corte regular</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$3700.01</p>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer2.jpg" alt="PANTALON TACTICO 5.11 - STRYKE PARA MUJER">
+                        <h3>PANTALON TACTICO 5.11 - STRYKE PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Estiramiento mecánico bidireccional Flex-Tac®.</li>
+                            <li>Cremalleras YKK® y broches Prym®</li>
+                            <li>76 oz. Tejido ripstop Flex-Tac®</li>
+                            <li>Cintura de túnel autoajustable.</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2250.00</p>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer3.jpg" alt="CHAMARRA TACTICA 5.11 - SCOPE HOODIE PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - SCOPE HOODIE PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Costuras de doble aguja en dobladillos y mangas.</li>
+                            <li>Las tintas premium resisten la decoloración</li>
+                            <li>Cinta de cuello hombro a hombro.</li>
+                            <li>Capucha forrada en jersey</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$999</p>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="producto">
+                        <img src="imagenes/mujer4.jpg" alt="CHAMARRA TACTICA 5.11 - ROMPEVIENTOS CASCADIA PARA MUJER">
+                        <h3>CHAMARRA TACTICA 5.11 - ROMPEVIENTOS CASCADIA PARA MUJER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Tejido dobby 100 % poliéster, revestimiento, 3,1 oz, DWR</li>
+                            <li>Plataforma con parche de bucle en la manga derecha</li>
+                            <li>Ribete elástico en los puños de las mangas</li>
+                            <li>Corte normal</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$2204.00</p>
+                    </div>
+
+                       <!-- Agrega más productos aquí -->
+                       <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio5.jpg">
+                        </div>
+                        <h3>GUANTES TACTICOS 5.11 - COMPETITION SHOOTING GLV</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li>Cierre de muñeca con velcro ajustable</li>
+                            <li>Panel para limpiar el sudor en el pulgar</li>
+                            <li>compatible con TAA</li>
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$920</p>
+                    </div>
+
+                    <!-- Agrega más productos aquí -->
+                    <div class="producto">
+                        <div class="imagen">
+                            <img src="imagenes/accesorio6.jpg">
+                        </div>
+                        <h3>BOLSA TACTICA 5.11 - H20 CARRIER</h3>
+                        <h4>Características</h4>
+                        <ul>
+                            <li> La bolsa táctica 5.11 es un versátil portabotellas diseñado para satisfacer las necesidades de hidratación tanto en entornos tácticos como recreativos.</li>
+                           
+                        </ul>
+                        <p class="precio"><b>Precio: </b>$880</p>
+                    </div>
+                </div>
+    </div>
+        </section>
+    </div>            
+    <script>
+
+
+
+
+
+
+
+
+        let productos = document.querySelectorAll(".producto");
+        productos.forEach(producto => {
+            producto.addEventListener("click", () => mostrarDetalle(producto));
+        });
+
+        function mostrarDetalle(producto) {
+            // Obtener los detalles del producto
+            var nombre = producto.querySelector('h3').textContent;
+            var caracteristicas = producto.querySelector('ul').innerHTML;
+            var precio = producto.querySelector('.precio').textContent;
+            var imagenSrc = producto.querySelector('img').src;
+
+            // Almacenar detalles en sessionStorage para mostrar en la página de detalle
+            sessionStorage.setItem('nombreProducto', nombre);
+            sessionStorage.setItem('caracteristicasProducto', caracteristicas);
+            sessionStorage.setItem('precioProducto', precio);
+            sessionStorage.setItem('imagenProducto', imagenSrc);
+
+            // Redirigir a la página de detalle
+            window.location.href = "detalle_producto.html";
+        }
+    </script>
+  <footer>
+    <div class="elemento-footer">
+    </div>
+    <p>!! se parte del mejor equipo tactico !! </p>
+    <p>UREM-TAC 2024, todos los derechos reservado</p>
+</footer>
+
+</body>
+
+</html>     

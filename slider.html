@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="menu.js"></script>
+
+    <style>
+
+.foto-infantil {
+            width: 96px;  /* Ancho de una foto infantil */
+            height: 132px; /* Alto de una foto infantil */
+            object-fit: cover; /* Asegura que la imagen se ajuste al tamaño del contenedor */
+        }
+
+
+
+        /* Estilos para la animación de los productos */
+        .listaProductos {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .producto {
+            flex: 0 0 auto;
+            width: calc(20% - 20px);
+            margin: 0 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+
+        .producto.visible {
+            opacity: 1;
+            transform: translateY(0);
+
+        }
+    </style>
+
+</head>
+
+<body>
+        <section>
+            <div class="seccionProducto">
+              
+                <div class="listaProductos">
+                    <div class="producto promociones">
+                        <div class="imagen-nombre">
+                            <img src="imagenes/promocion1.jpg" alt="promocion1"  class="foto-infantil">
+                            <h3>GORRA TACTICA 5.11</h3>
+                        </div>
+                        <div>
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Forro de buckram para estructura</li>
+                                <li>Logo bordado en el centro delantero</li>
+                                <li>Construcción de 6 paneles</li>
+                                <li>Ocho filas de costuras</li>
+                            </ul>
+                            <p class="precio"><b>Precio: $149.99</b></p>
+                        </div>
+                    </div>
+                    <div class="producto promociones">
+                        <div class="imagen-nombre">
+                            <img src="imagenes/promocion2.jpg" alt="promocion2" class="foto-infantil">
+                            <h3>CINTURON TACTICO 5.11</h3>
+                        </div>
+                        <div>
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Cincha B10 recubierta de TPU</li>
+                                <li>Capacidad de carga mejorada</li>
+                                <li>Dientes de doble retención</li>
+                                <li>1.5 de ancho</li>
+                            </ul>
+                            <p class="precio"><b>Precio: $139.99</b></p>
+                        </div>
+                    </div>
+                    <div class="producto promociones">
+                        <div class="imagen-nombre">
+                            <img src="imagenes/promocion3.jpg" alt="promocion3" class="foto-infantil">
+                            <h3>PARCHE TACTICO 5.11</h3>
+                        </div>
+                        <div>
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Edición limitada.</li>
+                                <li>Compatible con ropa y bolsos 5.11®.</li>
+                                <li>Fácil de poner y quitar.</li>
+                                <li>Adhesión de gancho.</li>
+                            </ul>
+                            <p class="precio"><b>Precio: $74.99</b></p>
+                        </div>
+                    </div>
+                    <div class="producto promociones">
+                        <div class="imagen-nombre">
+                            <img src="imagenes/promocion4.jpg" alt="promocion4" class="foto-infantil">
+                            <h3>LLAVERO 5.11</h3>
+                        </div>
+                        <div>
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Obra de arte en ambos lados</li>
+                                <li>Ojal de metal y anillo partido</li>
+                                <li>Ojal y anillo 100% hierro</li>
+                                <li>Hilo 100% poliéster</li>
+                            </ul>
+                            <p class="precio"><b>Precio: $49.99</b></p>
+                        </div>
+                    </div>
+                    <div class="producto promociones">
+                        <div class="imagen-nombre">
+                            <img src="imagenes/promocion5.jpg" alt="promocion5" class="foto-infantil">
+                            <h3>LLAVERO 5.11</h3>
+                        </div>
+                        <div>
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Material tejido con borde bordado.</li>
+                                <li>Ojal de metal y anillo dividido.</li>
+                                <li>Obra de arte en ambos lados.</li>
+                                <li>Ojal y anillo 100% hierro</li>
+                            </ul>
+                            <p class="precio"><b>Precio: $49.99</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+               <script>
+                    let productos = document.querySelectorAll(".producto");
+                    
+                    productos.forEach(producto => {
+                        producto.addEventListener("click", () => mostrarDetalle(producto));
+                    });
+
+                    function mostrarDetalle(producto) {
+                        // Obtener los detalles del producto
+                        var nombre = producto.querySelector('h3').textContent;
+                        var caracteristicas = producto.querySelector('ul').innerHTML;
+                        var precio = producto.querySelector('.precio').textContent;
+                        var imagenSrc = producto.querySelector('img').src;
+
+                        // Almacenar detalles en sessionStorage para mostrar en la página de detalle
+                        sessionStorage.setItem('nombreProducto', nombre);
+                        sessionStorage.setItem('caracteristicasProducto', caracteristicas);
+                        sessionStorage.setItem('precioProducto', precio);
+                        sessionStorage.setItem('imagenProducto', imagenSrc);
+
+                        // Redirigir a la página de detalle
+                        window.top.location.href = "detalle_producto.html";
+                    }
+
+                    var currentProduct = 0;
+                    function showProduct(index) {
+                        // Ocultar producto actual
+                        productos[currentProduct].classList.remove('visible');
+
+                        // Establecer nuevo producto como visible
+                        currentProduct = index;
+                        productos[currentProduct].classList.add('visible');
+                    }
+
+                    // Función para avanzar al siguiente producto
+                    function nextProduct() {
+                        var nextIndex = currentProduct + 1;
+                        if (nextIndex >= productos.length) {
+                            nextIndex = 0; // Volver al primer producto al llegar al final
+                        }
+                        showProduct(nextIndex);
+                    }
+
+                    // Mostrar el primer producto al cargar la página
+                    showProduct(0);
+
+                    // Cambiar automáticamente de producto cada cierto tiempo
+                    setInterval(nextProduct, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
+                </script>
+</body>
+</html>

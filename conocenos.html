@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONÓCENOS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="menu.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo-container img {
+            width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li.active a {
+            color: #ffcc00;
+        }
+
+        .caja-index {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            text-align: justify;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-members div {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .team-members img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        #registro-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #registro-form input[type="text"], #registro-form input[type="email"], #registro-form input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #registro-form input[type="submit"] {
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #registro-form input[type="submit"]:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo3.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="comprar.html">COMPRAR</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li class="active"><a href="conocenos.html">CONÓCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+                <li><button id="hamburguesa">☰</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="caja-index post-navbar">
+        <section id="conocenos" class="about">
+            <div class="container">
+                <h2>¿QUIERES SABER SOBRE NUESTRA TIENDA ONLINE?</h2>
+                <h2>HISTORIA</h2>
+                <p>
+                    En una ciudad donde la oscuridad y el bullicio se mezclan, un grupo de ciudadanos comunes se dedica a proteger a su comunidad con determinación. Entre ellos, se destaca Cordova, un exmilitar de fuerzas especiales que, tras su servicio, abre una tienda de accesorios tácticos llamada "UREM-TAC". Esta tienda no solo vende equipamiento como mochilas resistentes y chalecos antibalas, sino que también ofrece entrenamiento comunitario en autodefensa, primeros auxilios y preparación para emergencias. UREM-TAC se convierte en un centro de encuentro para quienes comparten el interés por la seguridad, ganando rápidamente reputación por sus productos de calidad y conocimientos especializados. Cordova y su equipo están orgullosos de su misión: proporcionar ropa táctica de alta calidad y un servicio excepcional a profesionales y entusiastas al aire libre.
+                </p>
+                <h2>MISIÓN</h2>
+                <p>
+                    Proporcionar ropa táctica de alta calidad y servicio excepcional, satisfaciendo las necesidades de profesionales y entusiastas al aire libre.
+                </p>
+                <h2>VISIÓN</h2>
+                <p>
+                    Ser la autoridad libre en ropa táctica, destacando por nuestra calidad, innovación y compromiso con el cliente.
+                </p>
+                <h2>VALORES</h2>
+                <p>Calidad: ofrecemos productos duraderos y funcionales.</p>
+                <p>Integridad: actuamos con honestidad y transparencia.</p>
+                <p>Innovación: buscamos constantemente nuevas soluciones.</p>
+                <p>Compromiso con el cliente: nos esforzamos por entender y satisfacer las necesidades individuales de cada cliente.</p>
+                <p>Respeto por el medio ambiente: promovemos prácticas sostenibles en toda nuestra cadena de suministros.</p>
+                <div class="team-members">
+                    <div>
+                        <img src="biker.jpg" alt="Miembro del Equipo">
+                        <h3>Nombre del Miembro Central: Cordova Castro Jose Uriel</h3>
+                        <p>
+                            Cordova Uriel ex-militar, listo para servirte, apoyarte y darte las mejores opciones. ¡Está al llamado para los gustos exigentes de los mejores clientes!
+                        </p>
+                    </div>
+                    <!-- Repite esto para cada miembro del equipo -->
+                </div>
+            </div>
+        </section>
+
+        <iframe width="660" height="371" style="display: block; margin: 0 auto;" src="https://www.youtube.com/embed/lWG4l8TTyLs" title="5.11 Tactical México" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <h2 style="text-align: center; margin-top: 20px;">Únete a la Comunidad UREM-TAC</h2>
+        <p style="text-align: center; margin: 20px;">
+            Conéctate con otros entusiastas y profesionales a través de nuestros eventos virtuales y redes sociales. Comparte experiencias, aprende nuevas técnicas y mantente al día con las últimas novedades en ropa táctica.
+        </p>
+        
+        <h2 style="text-align: center; margin-top: 20px;">Visítanos hoy y descubre por qué somos la elección número uno en ropa táctica online. ¡Tu próxima aventura comienza aquí!</h2>
+        
+        <footer>
+            <p>¡Sé parte del mejor equipo táctico!</p>
+            <p>UREM-TAC 2024, todos los derechos reservados</p>
+        </footer>
+        
+        <!-- Agrega un formulario con el id 'registro-form' -->
+        <form id="registro-form">
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="submit" value="Registrarse">
+        </form>
+
+        <script>
+            // Verifica si existe el elemento con id 'registro-form' antes de agregar el evento
+            if (document.getElementById('registro-form')) {
+                document.getElementById('registro-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevenir el envío del formulario
+                    // Redirigir a la página de shopping
+                    window.location.href = 'comprar.html';
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>
